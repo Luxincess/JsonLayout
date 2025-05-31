@@ -161,14 +161,14 @@ class ObstacleAwareLongestPath:
                 if 0 <= row < self.rows:
                     # 确定列的扫描顺序（蛇形）
                     #* 偶数行从左往右，奇数行从右往左
-                    #todo 通过start_j的位置来确定每行的扫描顺序 start_j == 0 偶数行从左往右， start_j == self.cols-1 偶数行从右往左
+                    #* 通过start_j的位置来确定每行的扫描顺序 start_j == 0 偶数行从左往右， start_j == self.cols-1 偶数行从右往左
                     col_range = range(0, self.cols) if row_offset % 2 == 0 else range(self.cols - 1, -1, -1)
                     for col in col_range:
                         if not visited[row, col]:
                             # 如果当前点与路径最后一点不相邻，需找一条连接路径
                             last_i, last_j = path[-1]   #* 取列表的最后一个元素
                             if abs(last_i - row) + abs(last_j - col) > 1: #* 不相邻
-                                connecting_path = self.bfs_path((last_i, last_j), (row, col), visited) #!
+                                connecting_path = self.bfs_path((last_i, last_j), (row, col), visited) #*这样就可以不用bfs
                                 if connecting_path:
                                     for p in connecting_path[1:]:
                                         path.append(p)
