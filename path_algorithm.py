@@ -186,6 +186,7 @@ class ObstacleAwareLongestPath:
                 col = start_col + col_offset * col_dir
                 if 0 <= col < self.cols:
                     # 确定行的扫描顺序（蛇形）
+                    #* 跟line164的修改思路一致
                     row_range = range(0, self.rows) if col_offset % 2 == 0 else range(self.rows - 1, -1, -1)
                     for row in row_range:
                         if not visited[row, col]:
