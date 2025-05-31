@@ -161,7 +161,7 @@ class ObstacleAwareLongestPath:
                 if 0 <= row < self.rows:
                     # 确定列的扫描顺序（蛇形）
                     #* 偶数行从左往右，奇数行从右往左
-                    #todo 通过start_j的位置来确定每行的扫描顺序
+                    #todo 通过start_j的位置来确定每行的扫描顺序 start_j == 0 偶数行从左往右， start_j == self.cols-1 偶数行从右往左
                     col_range = range(0, self.cols) if row_offset % 2 == 0 else range(self.cols - 1, -1, -1)
                     for col in col_range:
                         if not visited[row, col]:
