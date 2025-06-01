@@ -11,7 +11,7 @@ from region_divider import RegionDivider
 from region_points_generator import PathEndpointGenerator
 from region_path_generator import RegionPathGenerator
 
-#test_write
+
 class LayoutFromGrid:
     """从输入网格创建布局管理器"""
 
